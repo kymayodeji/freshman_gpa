@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+    <META charset="UTF-8">
+    <TITLE>College GPA Predicition Model</TITLE>
+     <STYLE>
+        body {
+            background-color: #faf8e6
+            }
+        </STYLE>
+</HEAD>
+<BODY>
+        <H1> Predict first year college GPA based on high school stats </H1>
+         <FORM action = {{ url_for('make_prediction')}} method = "post">
+          <P>Enter Student info (numeric):</P>
+
+          <P>Gender (1 for male, 2 for female):</P>
+         <P><INPUT type="float" name = "sex" pattern="[+-]?([0-9]*[.])?[0-9]+" oninvalid="setCustomValidity('Please enter a valid numeric value')"
+    onchange="try{setCustomValidity('')}catch(e){}" /></P>
+
+        <P>SAT Math score [200, 800]:</P>
+         <P><INPUT type="float" name = "sat_m" pattern="[+-]?([0-9]*[.])?[0-9]+" oninvalid="setCustomValidity('Please enter a numeric value between 200 and 800')"
+    onchange="try{setCustomValidity('')}catch(e){}" /></P>
+
+        <P>SAT Verbal score [200, 800]:</P>
+         <P><INPUT type="float" name = "sat_v" pattern="[+-]?([0-9]*[.])?[0-9]+" oninvalid="setCustomValidity('Please enter a numeric value between 200 and 800')"
+    onchange="try{setCustomValidity('')}catch(e){}" /></P>
+
+        <P>High School G.P.A. [0, 4.00]:</P>
+         <P><INPUT type="float" name = "hs_gpa" pattern="[+-]?([0-9]*[.])?[0-9]+" oninvalid="setCustomValidity('Please enter a numeric value between 0 and 4.0')"
+    onchange="try{setCustomValidity('')}catch(e){}" /></P>
+
+         <P><INPUT type = "submit" value="predict"/>   </P>
+         </FORM>
+
+        <BR></BR>
+        <HR>{{ prediction_text }} </H3>
+
+</BODY>
+</HTML>
