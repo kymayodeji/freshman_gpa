@@ -1,6 +1,7 @@
 # Import flask
-from old_app import Flask, render_template, request
-from sklearn.externals import joblib
+from flask import Flask, render_template, request
+from sklearn.externals 
+import joblib
 
 # Instantiate Flask object and load model
 app = Flask(__name__)
